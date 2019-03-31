@@ -1,11 +1,17 @@
 export default function sum() {
-    var output = 0;
-    for (var i = 0; i < arguments.length; i++) {
+    let output = 0;
+
+    for (let i = 0; i < arguments.length; i++) {
         output += arguments[i];
     }
-	if(typeof(output) === 'number'){
-        return output;
-    }else{
-        return '숫자를 넣어주세요';
-    }
+
+    const isNum = typeof(output) === 'number';
+
+    return isNum ? output : '숫자를 넣어주세요';
+
+	// if(isNum){
+    //     return output;
+    // }else{
+    //     return '숫자를 넣어주세요';
+    // }
 }
