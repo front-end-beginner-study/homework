@@ -7,6 +7,7 @@ export default function sum(x, y) {
         return '숫자를 넣어주세요';
     }
     
+    
     // if (typeof (type) === 'number') {
     //     return x + y;
     // }else if(typeof (type) === 'string'){
