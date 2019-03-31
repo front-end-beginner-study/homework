@@ -1,9 +1,13 @@
 export default function sum (a, b) {
-  if (
-    (isNaN(a) && isNaN(b)) ||
-    (typeof a === 'boolean' && typeof b === 'boolean')
-  ) {
+  const argArr = [...arguments];
+  const totalSum = argArr.reduce((acc, cur) => {
+    return acc + cur;
+  }, 0);
+  const [chk] = argArr.map(argArr => {
+    if (isNaN(argArr) || typeof argArr === 'boolean') return true;
+  });
+  if (chk) {
     return '숫자를 넣어주세요';
   }
-  return [...arguments].reduce((acc, cur) => acc + cur);
+  return totalSum;
 }
