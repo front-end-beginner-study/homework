@@ -1,16 +1,13 @@
 export default function sum() {
-  let a = 0;
-  let b = '';
+  const arrArg = Array.from(arguments);
 
-  for (let i = 0; i < arguments.length; i++) {
-    if (typeof arguments[i] === 'boolean') {
-      return (b += '숫자를 넣어주세요');
-    } else if (typeof arguments[i] === 'string') {
-      return (b += '숫자를 넣어주세요');
-    } else if (Array.isArray(arguments[i])) {
-      return (b += '숫자를 넣어주세요');
-    }
-    a += arguments[i];
+  const totalArg = arrArg.reduce((a, i) => {
+    return a + i;
+  }, 0);
+
+  const wrong = arrArg.some((item) => typeof item === 'boolean' || typeof item === 'string' || Array.isArray(item));
+  if (wrong) {
+    return '숫자를 넣어주세요';
   }
-  return a;
+  return totalArg;
 }
