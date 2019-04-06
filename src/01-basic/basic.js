@@ -1,13 +1,7 @@
-export default function sum() {
-  const arrArg = Array.from(arguments);
-
-  const totalArg = arrArg.reduce((a, i) => {
-    return a + i;
-  }, 0);
-
-  const wrong = arrArg.some((item) => typeof item === 'boolean' || typeof item === 'string' || Array.isArray(item));
-  if (wrong) {
-    return '숫자를 넣어주세요';
-  }
-  return totalArg;
+export default function sum(...theArgs) {
+  const isWrong = theArgs.some((item) => typeof item === 'boolean' || typeof item !== 'number');
+  return isWrong ? '숫자를 넣어주세요' : totalArg(theArgs);
 }
+const totalArg = function(e) {
+  return e.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+};
