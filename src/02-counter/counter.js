@@ -1,6 +1,6 @@
 export default class Counter {
   constructor (count = 0) {
-    this.count = typeof count === 'number' ? count : 0;
+    this.count = this.isNumber(count) ? count : 0;
     this.WRONG_MESSAGE = '숫자만 넣어주세요';
   }
 
