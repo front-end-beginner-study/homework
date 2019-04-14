@@ -1,4 +1,5 @@
 import Counter from './counter.js';
+
 describe('Counter APP', function() {
   describe('초기화', function() {
     const counter = new Counter();
