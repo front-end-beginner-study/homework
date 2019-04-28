@@ -7,11 +7,11 @@ export default class Counter {
   }
   increment(inputNum = 1) {
     const isWrong = typeof inputNum !== 'number';
-    this.count = isWrong ? '숫자만 넣어주세요' : (this.count += inputNum);
+    return isWrong ? '숫자만 넣어주세요' : (this.count += inputNum);
   }
   decrement(inputNum = 1) {
     const isWrong = typeof inputNum !== 'number';
-    this.count = isWrong ? '숫자만 넣어주세요' : (this.count -= inputNum);
+    return isWrong ? '숫자만 넣어주세요' : (this.count -= inputNum);
   }
   reset(inputNum = 0) {
     return (this.count = inputNum);
